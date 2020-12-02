@@ -108,7 +108,7 @@ class Hosts(object):
                 reversed_hosts[ip_address] = []
             reversed_hosts[ip_address].append(host_name)
         parts = []
-        for ip_address in sorted(reversed_hosts.keys(), compare_ip):
+        for ip_address in sorted(reversed_hosts.keys(), key=compare_ip):
             parts.append('\n# -- %s -- #' % (ip_address,))
             for host_name in sorted(reversed_hosts[ip_address]):
                 if not host_name:
